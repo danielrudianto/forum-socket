@@ -20,6 +20,14 @@ io.on("connection", (socket) => {
     socket.on("sendChat", function(data){
         io.emit("chat", data);
     });
+
+    socket.on("addRoom", function(data){
+        io.emit("addRoom", data);
+    });
+
+    socket.on("updateRoom", function(data){
+        io.emit("updateRoom", data);
+    })
 });
 
 httpServer.listen(5000, () => {
