@@ -25,9 +25,21 @@ io.on("connection", (socket) => {
         io.emit("addRoom", data);
     });
 
+    socket.on("addDetailRoom", function(data){
+        io.emit("addDetailRoom", data);
+    })
+
     socket.on("updateRoom", function(data){
         io.emit("updateRoom", data);
     })
+
+    socket.on("deleteRoom", function(data){
+        io.emit("deleteRoom", data);
+    });
+
+    socket.on("deleteDetailRoom", function(data){
+        io.emit("deleteDetailRoom", data);
+    });
 });
 
 httpServer.listen(5000, () => {
